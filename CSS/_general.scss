@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root {
+    --main-red: #fc635e;
+    --secondary-red: #fe8682;
+    --secondary-color: #adadad;
+    --secondary-bolder: #868686;
+    --background-color: #f2f2f2;
+    --figure: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+  .headline {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #868686;
+    font-weight: 500;
+    position: relative;
+    margin-top: 2.5rem;
+    span {
+      color: var(--main-red);
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      height: 1px;
+      background-color: var(--secondary-color);
+      width: 100%;
+      bottom: -0.4rem;
+      left: 0%;
+    }
+  }
+  .headline-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      font-size: 1.5rem;
+      color: #868686;
+      font-weight: 500;
+      position: relative;
+      margin-top: 2.5rem;
+      span {
+        color: var(--main-red);
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        background-color: var(--secondary-color);
+        width: 100%;
+        bottom: -0.4rem;
+        left: 0%;
+      }
+    }
+    p {
+      font-weight: lighter;
+      color: var(--secondary-color);
+      font-size: 1.25rem;
+      margin-top: 1.55rem;
+    }
+  }
+  
+  @mixin inline-headline {
+    h2 {
+      font-size: 1.5rem;
+      color: #565656;
+      font-weight: 600;
+      span {
+        color: var(--main-red);
+        font-weight: 600;
+      }
+    }
+  }
+  
+  html,
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16pt;
+  }
+  button {
+    background: inherit;
+    border: 2px solid var(--main-red);
+    color: var(--main-red);
+    font-weight: lighter;
+    font-size: 1.5rem;
+    padding: 0.6em 1.3em;
+    cursor: pointer;
+    border-radius: 0.25em;
+    outline: none;
+    transition: color 250ms ease-in-out;
+    &:hover {
+      background-color: var(--main-red);
+      color: white;
+    }
+  }
+  .btn-active {
+    background-color: var(--main-red);
+    color: white;
+  }
+  section {
+    position: relative;
+    padding: 0 calc(100% * 8 / 63);
+    .next-active,
+    .next {
+      position: absolute;
+      left: 50%;
+      bottom: 5%;
+      transform: translate(-50%, -5%);
+      width: 1.75rem;
+      height: 1.75rem;
+      background-image: url(../Assets/slider.png);
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+    .next {
+      background-image: url(../Assets/slider-none-active.png);
+    }
+  }
+  
